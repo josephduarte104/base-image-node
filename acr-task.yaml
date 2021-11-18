@@ -3,9 +3,9 @@ steps:
   - build:
       -f ./Dockerfile
       --build-arg REGISTRY_FROM_URL={{.Values.REGISTRY_FROM_URL}} 
-      -t {{.Run.Registry}}/node:15-alpine-{{.Run.ID}}
-      -t {{.Run.Registry}}/node:15-alpine
+      -t {{.Run.Registry}}/node:latest-{{.Run.ID}}
+      -t {{.Run.Registry}}/node:latest
       .
   - push: 
-    - "{{.Run.Registry}}/node:15-alpine-{{.Run.ID}}"
-    - "{{.Run.Registry}}/node:15-alpine"
+    - "{{.Run.Registry}}/node:latest-{{.Run.ID}}"
+    - "{{.Run.Registry}}/node:latest"
